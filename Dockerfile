@@ -10,4 +10,4 @@ EXPOSE 80
 
 ENV NAME Oogieboogieman
 
-CMD ["python", "app.py"]
+CMD ["python", "itsreadyapi.py"]
