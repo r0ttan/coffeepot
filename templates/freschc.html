@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+	<title> I want coffee </title>
+	<body>
+		<div class="w3-container">
+			{% for b in out %}
+				<div class="w3-card-4 w3-quarter w3-margin">
+					<header class="w3-container w3-brown">
+						<p>{{ b.name }}</p>
+					</header>
+					<div class="w3-container">
+						{% if b.status.empty %}
+							<p> The pot is </p>
+						{% else %}
+							<p> Coffe was made </p>
+						{% endif %}
+						{% if b.status.fresh != "" %}
+							<p> {{ '%0.2f' % b.status.fresh }} minutes ago</p>
+						{% else %}
+							<p> empty </p>
+						{% endif %}
+						</div>
+					</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
